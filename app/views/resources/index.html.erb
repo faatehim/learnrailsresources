@@ -1,8 +1,16 @@
-<h1>Want to learn Ruby on Rails. Here are a few community submitted resources to do just that!</h1>
+<link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet">
+
+
+
+<h1>Want to learn Ruby on Rails? <br> Here are a few community submitted resources to do just that!</h1>
 
 <% @resources.each do |resource| %>
   <div class="resource">
-    <h2><%= link_to resource.title, resource.url %></h2>
+    <h2><%= link_to resource.title, resource.description %></h2>
   </div>
 <% end %>
-<p><%= link_to "Add a resource", new_resource_path %></p>
+<p>
+   
+   <%= link_to "Add a resource", new_resource_path %>
+	
+</p>

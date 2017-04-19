@@ -3,9 +3,15 @@ class ResourcesController < ApplicationController
   	@resources = Resource.all
   end
 
+
+  def show
+    @resource = Resource.first
+  end
+
   def new
   	@resource = Resource.new
   end
+
 
 
   def create

@@ -1,3 +1,26 @@
-// Place all the styles related to the resources controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+h1 {
+	font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 40px;
+}
+
+a, p{
+	text-decoration: none;
+	text-align: center;
+	display: block;
+	color: #32B67A;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-family: 'Raleway', sans-serif;
+	font-size: 30px;
+	font-weight: bold
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+p {
+	padding-top: 20px;
+}
+
