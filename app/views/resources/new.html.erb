@@ -1,2 +1,6 @@
-<h1>Resources#new</h1>
-<p>Find me in app/views/resources/new.html.erb</p>
+<%= simple_form_for @resource do |form| %>
+  <%= form.input :title, label: "Resource title" %>
+  <%= form.input :url, label: "Link to resource" %>
+  <%= form.input :description, label: "Brief description about the resource" %>
+  <%= form.button :submit %>
+<% end %>
