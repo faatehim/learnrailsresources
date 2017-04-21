@@ -1,11 +1,15 @@
 class ResourcesController < ApplicationController
   def index
-  	@resources = Resource.all
+  	@resources = Resource.page(params[:page]).per(15)
   end
 
 
   def show
-    @resource = Resource.first
+       @resource = Resource.last
+  end
+
+  def edit
+    @product = Product.where(:id => params[:id]).first
   end
 
   def new

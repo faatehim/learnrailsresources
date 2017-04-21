@@ -7,8 +7,11 @@
 <% @resources.each do |resource| %>
     <h2><%= link_to resource.title, resource.description %></h2>
 <% end %>
-<p>
+<div class="cities">
    
    <%= link_to "Add a resource", new_resource_path %>
 	
-</p>
+
+</div>
+
+<p><%= paginate @resources %></p>
