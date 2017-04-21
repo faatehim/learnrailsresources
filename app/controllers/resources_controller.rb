@@ -5,7 +5,8 @@ class ResourcesController < ApplicationController
 
 
   def show
-       @resource = Resource.last
+        @resource = Resource.where(:id => params[:id]).first
+
   end
 
   def edit
