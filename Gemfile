@@ -46,6 +46,7 @@ group :development do
 end
   gem 'simple_form'
   gem 'kaminari'
+  gem 'protected_attributes', '~> 1.1', '>= 1.1.3'
 	
  
 

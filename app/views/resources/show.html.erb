@@ -7,3 +7,6 @@
   <b>Description:</b>
   <%= @resource.description %>
 </p>
+
+
+<%= link_to 'Destroy', @resource, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
