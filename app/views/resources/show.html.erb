@@ -1,6 +1,6 @@
 <p>
   <b>Name:</b>
-  <%= @resource.title %>
+  <%= link_to @resource.title, @resource.url %>
 </p>
 
 <p>
@@ -10,3 +10,6 @@
 
 
 <%= link_to 'Destroy', @resource, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+<%= link_to 'Edit', edit_resource_path %>
+
+
