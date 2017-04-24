@@ -1,9 +1,12 @@
 <h1>Editing Product</h1>
 <div class="form">
 <%= simple_form_for @resource do |form| %>
-  	<%= form.input :title, label: "Resource Title:" %>
-  	<%= form.input :url, label: "Link to Resource:" %>
- 	 <%= form.input :description, label: "Brief Description About The Resource:" %>
-  	<%= form.button :submit %>
-</div>
+  <%= form.input :title, label: "Resource Title:" %>
+  <%= form.input :url, label: "Link to Resource:" %>
+  <%= form.input :description, label: "Brief Description About The Resource:" %>
+  <%= form.input :image, as: :file %>
+
+  <%= form.button :submit %>
+  </div>
+  
 <% end %>

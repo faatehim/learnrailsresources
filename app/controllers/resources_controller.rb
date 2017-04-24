@@ -66,5 +66,5 @@ end
 
 
  def resources_params
- 	    params.require(:resource).permit(:title, :url, :description)
+ 	    params.require(:resource).permit(:title, :url, :description, :image)
 end

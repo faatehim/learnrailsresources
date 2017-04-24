@@ -1,3 +1,5 @@
+<%# image_tag @resource.image.url(:medium) %>
+
 <p>
   <b>Name:</b>
   <%= link_to @resource.title, @resource.url %>
@@ -9,7 +11,12 @@
 </p>
 
 
+
+
 <%= link_to 'Destroy', @resource, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
 <%= link_to 'Edit', edit_resource_path %>
+
+
+<%= render 'disqus' %>
 
 
