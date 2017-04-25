@@ -14,7 +14,7 @@ class ResourcesController < ApplicationController
   end
 
   def new
-  	@resource = Resource.new
+  	@resource = current_user.resources.build
   end
 
 
@@ -48,13 +48,13 @@ class ResourcesController < ApplicationController
 
 
   def create
-  	@resource= Resource.new(resources_params)
+  	@resource= current_user.resources.build(resources_params)
 
   	if @resource.save
     	redirect_to root_path
     	flash[:alert] = "Successfully created new resource!"
-     else
-       render "new"
+    else
+      render "new"
      end
     end
 

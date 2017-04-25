@@ -1,6 +1,6 @@
 <h1>Editing Product</h1>
 <div class="form">
-<%= simple_form_for @resource do |form| %>
+<%= simple_form_for @resource, url: '/resources/new' do |form| %>
   <%= form.input :title, label: "Resource Title:" %>
   <%= form.input :url, label: "Link to Resource:" %>
   <%= form.input :description, label: "Brief Description About The Resource:" %>
