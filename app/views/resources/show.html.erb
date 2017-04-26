@@ -12,9 +12,11 @@
 
 
 
+<% if post.user == current_user %>
+  <%= link_to 'Destroy', @resource, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+  <%= link_to 'Edit', edit_resource_path %>
+<% end %>
 
-<%= link_to 'Destroy', @resource, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
-<%= link_to 'Edit', edit_resource_path %>
 
 
 <%= render 'disqus' %>
