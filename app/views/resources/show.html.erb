@@ -1,3 +1,9 @@
+<div class="signupandin">
+   <%= link_to "Sign Up", new_user_registration_path %>
+   <%= link_to "Sign In", new_user_session_path %>
+   <%= link_to "Add a resource", new_resource_path %>
+</div>
+
 <%= image_tag @resource.image.url(:medium) %>
 
 <p>
@@ -12,7 +18,7 @@
 
 
 
-<% if post.user == current_user %>
+<% if @resource.user == current_user %>
   <%= link_to 'Destroy', @resource, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
   <%= link_to 'Edit', edit_resource_path %>
 <% end %>

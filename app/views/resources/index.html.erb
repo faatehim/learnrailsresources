@@ -1,17 +1,30 @@
+
 <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet">
 
 
 
 <h1>Want to learn Ruby on Rails? <br> Here are a few community submitted resources to do just that!</h1>
 
-<% @resources.each do |resource| %>
-    <h2><%= link_to resource.title, resource %></h2>
-<% end %>
-<div class="cities">
-   
-   <%= link_to "Add a resource", new_resource_path %>
+
+   <div class="signupandin">
+    <%= link_to "Sign Up", new_user_registration_path %>
+    <%= link_to "Sign In", new_user_session_path %>
+    <%= link_to "Add a resource", new_resource_path %>
+   </div>
+
+
+   <hr>
+
+
+    <% @resources.each do |resource| %>
+   <div class="index">
+       <h2><%= link_to resource.title, resource %></h2>
+   <% end %>
+
+   </div>
+
+
 	
 
-</div>
 
 <p><%= paginate @resources %></p>
