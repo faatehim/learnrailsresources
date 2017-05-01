@@ -18,8 +18,8 @@
 
     <% @resources.each do |resource| %>
    <div class="index">
-       <h2><%= link_to resource.title, resource %> <%= resource.type %></h2>
-
+       <h2><%= link_to resource.title, resource %> <%= resource.tag %></h2>
+         <hr>
    <% end %>
 
    </div>
