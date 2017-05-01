@@ -30,13 +30,13 @@ class ResourcesController < ApplicationController
         format.html { render action: "edit" }
         format.json { render json: @resource.errors, :status => :unprocessable_entity }
       end
-      end
+    end
   end
 
 
- def destroy
- 	@toDelete = Resource.where(:id => params[:id]).first
- 	puts @toDelete.id
+  def destroy
+ 	  @toDelete = Resource.where(:id => params[:id]).first
+ 	  puts @toDelete.id
 
     if @toDelete.destroy
       flash[:notice] = "Successfully deleted post!"
@@ -51,21 +51,28 @@ class ResourcesController < ApplicationController
   def create
   	@resource= current_user.resources.build(resources_params)
 
+    @filelocation = params[:image]
+    puts @filelocation
+    @uploader = ImageUploader.new
+    @uploader.store!(@filelocation)
+
+
   	if @resource.save
     	redirect_to root_path
     	flash[:alert] = "Successfully created new resource!"
     else
       render "new"
-     end
     end
-
-end
+    
+  end
 
 
 
   private
 
+   def resources_params
+ 	    params.require(:resource).permit(:title, :url, :description, :image, :type)
+   end
 
- def resources_params
- 	    params.require(:resource).permit(:title, :url, :description, :image)
-end
+ end
+

@@ -47,8 +47,9 @@ end
   gem 'simple_form'
   gem 'kaminari'
   gem 'protected_attributes', '~> 1.1', '>= 1.1.3'
-  gem 'paperclip', '~> 4.3', '>= 4.3.6'
   gem 'devise', '~> 4.2'
+  gem 'carrierwave', '~> 1.0'
+
 
 	
  

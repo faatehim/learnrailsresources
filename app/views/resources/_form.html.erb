@@ -1,9 +1,15 @@
-<div class="form">
+
+  <div class="form">
   <%= simple_form_for @resource, url: '/resources/new' do |form| %>
     <%= form.input :title, label: "Resource Title:" %>
     <%= form.input :url, label: "Link to Resource:" %>
+    <%= form.input :type, label: "What type of content is this resource (Book, Course, etc" %>
     <%= form.input :description, label: "Brief Description About The Resource:" %>
-    <%= form.input :image, as: :file %>
+    <%= form.file_field :image %>
     <%= form.button :submit %>
 </div>
 <% end %>
+
+
+
+
