@@ -1,3 +1,5 @@
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
 <div class="signupandin">
    <%= link_to "Home", resources_path %>
    <%= link_to "Sign Up", new_user_registration_path %>
@@ -7,20 +9,25 @@
 </div>
 
 <%= image_tag @resource.image_url.to_s if @resource.image_url.present? %>
+<div class="voteshow">
+     <%= link_to like_resource_path(@resource), method: :put do %>
+      <i class="em em---1"></i>
+             Upvote -
+     <%= @resource.get_upvotes.size %>
+    <% end %>
+
+     <%= link_to dislike_resource_path(@resource), method: :put do %>
+      <i class="em em--1"></i>
+         Downvote -
+     <%= @resource.get_downvotes.size %>
+     <% end %>
+
+</div>
 
 
 
 <div class="show">
 
- <%= link_to like_resource_path(@resource), method: :put do %>
-           Upvote
-         <%= @resource.get_upvotes.size %>
-<% end %>
-
-<%= link_to dislike_resource_path(@resource), method: :put do %>
-  Downvote
-  <%= @resource.get_downvotes.size %>
-<% end %>
 
 <p>
   <b>Name:</b>
@@ -41,11 +48,12 @@
 </div>
 
 
-
-<% if @resource.user == current_user %>
-  <%= link_to 'Destroy', @resource, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
-  <%= link_to 'Edit', edit_resource_path %>
-<% end %>
+<div class="destroyandedit">
+   <% if @resource.user == current_user %>
+    <%= link_to 'Destroy', @resource, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+   <%= link_to 'Edit', edit_resource_path %>
+  <% end %>
+</div>
 
 
 

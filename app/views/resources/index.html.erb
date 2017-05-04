@@ -1,6 +1,8 @@
 
 <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet">
 
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
 
 
 <h1>Want to learn Ruby on Rails? <br> Here are a few community submitted resources to do just that!</h1>
@@ -17,18 +19,22 @@
 
 
     <% @resources.each do |resource| %>
-   <div class="index">
-       <h2><%= link_to resource.title, resource %> <%= resource.tag %></h2>
-         <hr>
-         <%= link_to like_resource_path(resource), method: :put do %>
-           Upvote
-         <%= resource.get_upvotes.size %>
-<% end %>
+       <div class="index">
+         <h2><%= link_to resource.title, resource %> <%= resource.tag %></h2>
+         <div class="vote">
+             <%= link_to like_resource_path(resource), method: :put do %>
+             <i class="em em---1"></i>
+                        Upvote -
+             <%= resource.get_upvotes.size %>
+        <% end %>
 
-<%= link_to dislike_resource_path(resource), method: :put do %>
-  Downvote
-  <%= resource.get_downvotes.size %>
-<% end %>
+       <%= link_to dislike_resource_path(resource), method: :put do %>
+       <i class="em em--1"></i>
+                Downvote -
+       <%= resource.get_downvotes.size %>
+       <% end %>
+       </div>
+    <hr>
    <% end %>
 
    </div>
