@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
-  resources :resources
+  resources :resources do 
+    member do
+      put "like", to: "resources#upvote"
+      put "dislike", to: "resources#downvote"
+  end
+end
   root 'resources#index'
     get '/resources/new' => 'resources#new'
     post '/resources/new' => 'resources#create'
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

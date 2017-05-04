@@ -67,6 +67,20 @@ class ResourcesController < ApplicationController
   end
 
 
+   def upvote
+     @resource = Resource.find(params[:id])
+     @resource.upvote_by current_user
+     redirect_to :back
+   end
+ 
+    def downvote
+     @resource = Resource.find(params[:id])
+     @resource.downvote_from current_user
+     redirect_to :back
+   end
+ 
+
+
 
   private
 

@@ -20,6 +20,15 @@
    <div class="index">
        <h2><%= link_to resource.title, resource %> <%= resource.tag %></h2>
          <hr>
+         <%= link_to like_resource_path(resource), method: :put do %>
+           Upvote
+         <%= resource.get_upvotes.size %>
+<% end %>
+
+<%= link_to dislike_resource_path(resource), method: :put do %>
+  Downvote
+  <%= resource.get_downvotes.size %>
+<% end %>
    <% end %>
 
    </div>

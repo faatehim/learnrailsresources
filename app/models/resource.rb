@@ -6,4 +6,5 @@ class Resource < ActiveRecord::Base
   	validates :description, presence: true
   	validates :tag, presence: true
   	belongs_to :user
+  	acts_as_votable
 end

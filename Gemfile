@@ -49,6 +49,9 @@ end
   gem 'protected_attributes', '~> 1.1', '>= 1.1.3'
   gem 'devise', '~> 4.2'
   gem 'carrierwave', '~> 1.0'
+  gem 'acts_as_votable', '~> 0.10.0'
+  gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
+
 
 
 	
