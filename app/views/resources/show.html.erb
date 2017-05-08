@@ -1,5 +1,5 @@
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-
+<h1> Learn Rails Resources </h1>
 <div class="signupandin">
    <%= link_to "Home", resources_path %>
    <%= link_to "Sign Up", new_user_registration_path %>
@@ -7,14 +7,17 @@
    <%= link_to "Add a resource", new_resource_path %>
 
 </div>
-
-<%= image_tag @resource.image_url.to_s if @resource.image_url.present? %>
+<hr>
+<div class="imageshow">
+  <%= image_tag @resource.image.thumb.url.to_s %>
+</div>
 <div class="voteshow">
      <%= link_to like_resource_path(@resource), method: :put do %>
       <i class="em em---1"></i>
              Upvote -
      <%= @resource.get_upvotes.size %>
     <% end %>
+       
 
      <%= link_to dislike_resource_path(@resource), method: :put do %>
       <i class="em em--1"></i>

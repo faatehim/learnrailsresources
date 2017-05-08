@@ -20,6 +20,10 @@
 
     <% @resources.each do |resource| %>
        <div class="index">
+         <div class="imageindex">
+           <%= image_tag resource.image.thumb.url.to_s %>
+         </div>
+
          <h2><%= link_to resource.title, resource %> <%= resource.tag %></h2>
          <div class="vote">
              <%= link_to like_resource_path(resource), method: :put do %>

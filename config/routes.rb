@@ -8,8 +8,6 @@ Rails.application.routes.draw do
   end
 end
   root 'resources#index'
-    get '/resources/new' => 'resources#new'
-    post '/resources/new' => 'resources#create'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

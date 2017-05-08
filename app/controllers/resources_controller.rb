@@ -23,7 +23,7 @@ class ResourcesController < ApplicationController
     @resource = Resource.where(:id => params[:id]).first
 
     respond_to do |format|
-      if @resource.update_attributes(resources_params)
+      if @resource.update(resources_params)
         format.html { redirect_to @resource, :notice => 'Resource was successfully updated.' }
         format.json { head :no_content }
       else
