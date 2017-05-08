@@ -5,6 +5,7 @@ class Resource < ActiveRecord::Base
   	validates :url, presence: true
   	validates :description, presence: true
   	validates :tag, presence: true
+    validates :shortdescription, presence: true
   	belongs_to :user
   	acts_as_votable
   	validates_processing_of :image

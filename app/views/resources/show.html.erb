@@ -14,16 +14,10 @@
 <div class="voteshow">
      <%= link_to like_resource_path(@resource), method: :put do %>
       <i class="em em---1"></i>
-             Upvote -
      <%= @resource.get_upvotes.size %>
+     Upvote
     <% end %>
        
-
-     <%= link_to dislike_resource_path(@resource), method: :put do %>
-      <i class="em em--1"></i>
-         Downvote -
-     <%= @resource.get_downvotes.size %>
-     <% end %>
 
 </div>
 

@@ -52,7 +52,8 @@ end
   gem 'carrierwave', '~> 0.10.0'
   gem 'acts_as_votable', '~> 0.10.0'
   gem 'bootstrap-sass', '~> 3.3', '>= 3.3.6'
-  gem 'mini_magick', '~> 4.3'
+  gem "mini_magick"
+
 
 
 
