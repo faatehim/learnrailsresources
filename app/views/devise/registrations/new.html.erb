@@ -4,14 +4,21 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
+    <div class="emailedit">
+       <%= f.input :email, required: true, autofocus: true %>
+    </div>
+    <div class="emailedit">
+      <%= f.input :password, required: true %>
+    </div>
+    <div class="emailedit">
     <%= f.input :password_confirmation, required: true %>
+    </div>
   </div>
 
   <div class="form-actions">
     <%= f.button :submit, "Sign up" %>
   </div>
 <% end %>
-
+<div class="sharedlinks">
 <%= render "devise/shared/links" %>
+</div>

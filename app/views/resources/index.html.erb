@@ -1,47 +1,41 @@
-
 <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet">
 
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 
 
 
-<h1>Want to learn Ruby on Rails? <br> Here are a few community submitted resources to do just that!</h1>
+<h1>Want to learn Ruby on Rails? </h1> <h1> Here are a few community submitted resources to do just that!</h1>
 
 
-   <div class="signupandin">
-    <%= link_to "Sign Up", new_user_registration_path %>
-    <%= link_to "Sign In", new_user_session_path %>
-    <%= link_to "Add a resource", new_resource_path %>
-   </div>
+<hr>
 
 
-   <hr>
-
-
+  
     <% @resources.each do |resource| %>
        <div class="index">
          <div class="imageindex">
            <%= image_tag resource.image.thumb.url.to_s %>
          </div>
 
-         <h2><%= link_to resource.title, resource %> <%= resource.tag %></h2>
-         <div class="shortdescription">
-           <%= resource.shortdescription %>
-        </div>
-         <div class="vote">
+          <div class="vote">
              <%= link_to like_resource_path(resource), method: :put do %>
              <i class="em em---1"></i>
              <%= resource.get_upvotes.size %>
              Upvote
         <% end %>
        </div>
+
+         <h2><%= link_to resource.title, resource %> <%= resource.tag %></h2>
+         <div class="shortdescription">
+           <%= resource.shortdescription %>
+        </div>
     <hr>
    <% end %>
 
    </div>
 
 
-	
+  
 
 
 <p><%= paginate @resources %></p>

@@ -21,15 +21,10 @@ class ResourcesController < ApplicationController
 
   def update
     @resource = Resource.where(:id => params[:id]).first
-
-    respond_to do |format|
-      if @resource.update(resources_params)
-        format.html { redirect_to @resource, :notice => 'Resource was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @resource.errors, :status => :unprocessable_entity }
-      end
+    if @resource.update(resources_params)
+      redirect_to root_path
+    else
+      render 'edit'
     end
   end
 
@@ -78,6 +73,13 @@ class ResourcesController < ApplicationController
      @resource.downvote_from current_user
      redirect_to :back
    end
+
+   def form 
+    file_name = params[:upload][:file].original_filename
+
+    end
+
+
  
 
 

@@ -1,13 +1,5 @@
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 <h1> Learn Rails Resources </h1>
-<div class="signupandin">
-   <%= link_to "Home", resources_path %>
-   <%= link_to "Sign Up", new_user_registration_path %>
-   <%= link_to "Sign In", new_user_session_path %>
-   <%= link_to "Add a resource", new_resource_path %>
-
-</div>
-<hr>
 <div class="imageshow">
   <%= image_tag @resource.image.thumb.url.to_s %>
 </div>
@@ -26,15 +18,18 @@
 <div class="show">
 
 
-<p>
+<div class="nameshow">
   <b>Name:</b>
   <%= link_to @resource.title, @resource.url %>
 </p>
+</div>
 
+<div class="typeshow">
 <p>
   <b>Type:</b>
   <%= @resource.tag %>
 </p>
+</div>
 <div class="description">
   <p>
     <b>Description:</b>
