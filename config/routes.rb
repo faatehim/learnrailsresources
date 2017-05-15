@@ -1,13 +1,14 @@
 Rails.application.routes.draw do
   devise_for :admins
   devise_for :users
+  resources :swifts
   resources :resources do 
     member do
       put "like", to: "resources#upvote"
       put "dislike", to: "resources#downvote"
   end
 end
-  root 'resources#index'
+  root 'resources#intro'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

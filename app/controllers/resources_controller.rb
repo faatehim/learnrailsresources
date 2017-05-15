@@ -79,6 +79,11 @@ class ResourcesController < ApplicationController
 
     end
 
+    def intro
+    render :layout => false
+
+    end
+
 
  
 
