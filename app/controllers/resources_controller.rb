@@ -1,5 +1,5 @@
 class ResourcesController < ApplicationController
-  before_action :authenticate_user!, except: [:index, :show]
+  before_action :authenticate_user!, except: [:index, :show, :intro]
 
   def index
   	@resources = Resource.page(params[:page]).per(15)
@@ -80,7 +80,6 @@ class ResourcesController < ApplicationController
     end
 
     def intro
-    render :layout => false
 
     end
 

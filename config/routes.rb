@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
+  get 'pythons/index'
+
+  get 'pythons/new'
+
+  get 'pythons/show'
+
   devise_for :admins
   devise_for :users
-  resources :swifts
+  resources :pythons
   resources :resources do 
     member do
       put "like", to: "resources#upvote"
