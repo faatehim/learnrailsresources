@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170516210357) do
+ActiveRecord::Schema.define(version: 20170518233217) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -31,37 +31,6 @@ ActiveRecord::Schema.define(version: 20170516210357) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
 
-  create_table "htmls", force: :cascade do |t|
-    t.string   "title"
-    t.string   "url"
-    t.string   "description"
-    t.string   "tag"
-    t.string   "shortdescription"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "javascripts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "url"
-    t.string   "description"
-    t.string   "tag"
-    t.string   "shortdescription"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-  end
-
-  create_table "pythons", force: :cascade do |t|
-    t.string   "title"
-    t.string   "url"
-    t.string   "description"
-    t.string   "tag"
-    t.string   "shortdescription"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
-    t.integer  "user_id"
-  end
-
   create_table "resources", force: :cascade do |t|
     t.string   "title"
     t.string   "url"
@@ -72,16 +41,6 @@ ActiveRecord::Schema.define(version: 20170516210357) do
     t.string   "image"
     t.string   "tag"
     t.string   "shortdescription"
-  end
-
-  create_table "swifts", force: :cascade do |t|
-    t.string   "title"
-    t.string   "url"
-    t.string   "description"
-    t.string   "tag"
-    t.string   "shortdescription"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
   end
 
   create_table "users", force: :cascade do |t|
