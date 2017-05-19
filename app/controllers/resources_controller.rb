@@ -53,7 +53,7 @@ class ResourcesController < ApplicationController
 
 
   	if @resource.save
-    	redirect_to root_path
+    	redirect_to resource_path
     	flash[:alert] = "Successfully created new resource!"
     else
       render "new"
@@ -91,7 +91,7 @@ class ResourcesController < ApplicationController
   private
 
    def resources_params
- 	    params.require(:resource).permit(:title, :url, :description, :image, :tag, :shortdescription)
+ 	    params.require(:resource).permit(:title, :url, :description, :image, :tag, :shortdescription, :language)
    end
 
  end
