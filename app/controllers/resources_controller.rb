@@ -2,7 +2,7 @@ class ResourcesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :intro]
 
   def index
-  	@resources = Resource.page(params[:page]).per(15)
+  	@resources = Resource.where(:language => params[:language]).all
   end
 
 
@@ -53,7 +53,7 @@ class ResourcesController < ApplicationController
 
 
   	if @resource.save
-    	redirect_to resource_path
+    	redirect_to resources_path
     	flash[:alert] = "Successfully created new resource!"
     else
       render "new"
