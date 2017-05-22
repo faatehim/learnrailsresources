@@ -3,6 +3,7 @@ class ResourcesController < ApplicationController
 
   def index
   	@resources = Resource.where(:language => params[:language]).all
+    @resource = Resource.where(:id => params[:id]).first
   end
 
 
