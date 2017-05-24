@@ -206,6 +206,7 @@ DEPENDENCIES
   byebug
   carrierwave (~> 0.10.0)
   coffee-rails (~> 4.1.0)
+  coffee-script (~> 2.4, >= 2.4.1)
   devise (~> 4.2)
   jbuilder (~> 2.0)
   jquery-rails
