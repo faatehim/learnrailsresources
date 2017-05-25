@@ -1,48 +1,69 @@
-<%= form_for @resource, html: { multipart: true } do |f| %>
-  
- <div class="form">
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :url %><br>
-    <%= f.text_area :url%>
-  </div>
-  <div class="field">
-    <%= f.label :shortdescription %><br>
-    <%= f.text_area :shortdescription %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </div>
-  <div class="field">
-    <%= f.label :tag %><br>
-    <%= f.text_area :tag %>
-  </div>
-  <div class="field">
-    <%= f.label :language %><br>
-    <%= f.text_area :language %>
-  </div>
-  <div class="field">
-  <div class="imageform">
-    <%= f.label :image %><br>
-    <%= f.file_field :image %>
-  <div class="removeimage">
-    <% if f.object.image? %>
-      <%= image_tag f.object.image.thumb.url %>
-      <%= f.label :remove_image %>
-      <%= f.check_box :remove_image %> 
-    <% end %>
-  </div>
-  </div>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-</div>
+  <link href="https://fonts.googleapis.com/css?family=Raleway|Roboto+Condensed" rel="stylesheet">
+
+      <%= form_for @resource, html: { multipart: true } do |f| %>
+        
+       <div class="form">
+        <div class="field">
+          <%= f.label :title %><br>
+          <%= f.text_field :title %>
+        </div>
+        <div class="field">
+          <%= f.label :url %><br>
+          <%= f.text_area :url%>
+        </div>
+        <div class="field">
+          <%= f.label :shortdescription %><br>
+          <%= f.text_area :shortdescription %>
+        </div>
+        <div class="field">
+          <%= f.label :description %><br>
+          <%= f.text_area :description %>
+        </div>
+        <div class="field">
+          <%= f.label :tag %><br>
+          <%= f.text_area :tag %>
+        </div>
+        <div class="field">
+          <%= f.label :language %><br>
+          <%= f.text_area :language %> 
+          <h3> This must be either rails, javascript, python, swift, or html (all lowercase). </h3>
+        </div>
+        <div class="field">
+        <div class="imageform">
+          <%= f.label :image %><br>
+          <%= f.file_field :image %>
+        <div class="removeimage">
+          <% if f.object.image? %>
+            <%= image_tag f.object.image.thumb.url %>
+            <%= f.label :remove_image %>
+            <%= f.check_box :remove_image %> 
+          <% end %>
+        </div>
+        </div>
+        </div>
+        <div class="actions">
+          <%= f.submit %>
+        </div>
+      <% end %>
+      </div>
+
+
+      <style>
+
+      div.field {
+        padding: 10px;
+      }
+
+      h3 {
+          font-family: 'Roboto Condensed', sans-serif;  
+        font-size: 17px;
+        padding-top: 10px;
+      }
+
+
+
+      </style>
+
 
 
 

@@ -54,7 +54,7 @@ class ResourcesController < ApplicationController
 
 
   	if @resource.save
-    	redirect_to resources_path
+    	redirect_to root_path
     	flash[:alert] = "Successfully created new resource!"
     else
       render "new"

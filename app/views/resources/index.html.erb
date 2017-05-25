@@ -5,7 +5,7 @@
 
 
 
-<h1>Want to learn <%= @language %> </h1> <h1> Here are a few community submitted resources to do just that!</h1>
+<h1>Want to learn ?</h1> <h1> Here are a few community submitted resources to do just that!</h1>
 
 
 <hr>
@@ -26,7 +26,8 @@
         <% end %>
        </div>
 
-         <h2><%= link_to resource.title, resource %> <%= resource.tag %> <%= resource.language %></h2>
+         <h2><%= link_to resource.title, resource %>  
+         <div class="tagandlang"> <%= resource.tag %> <%= resource.language %> </h> </h2> </div>
          <div class="shortdescription">
            <%= resource.shortdescription %>
         </div>
@@ -35,6 +36,21 @@
 
    </div>
 
+
+   <style>
+
+  div.tagandlang {
+    color: #FF8B8B;;
+    padding-top: 10px;
+  }
+
+  div.vote {
+    padding-top: 10px;
+  }
+
+div.shortdescription {
+     font-family: 'Roboto Condensed', sans-serif;  
+}
 
   
 
