@@ -1,7 +1,5 @@
   <%= render "nav" %>
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-<h1> Learn Rails Resources </h1>
-
 
 <div class="imageshow">
   <%= image_tag @resource.image.thumb.url.to_s %>
@@ -40,7 +38,7 @@
 </div>
 <div class="description">
   <p>
-    <b>Description:</b>
+    <b>Description: <br> </b>
     <%= @resource.description %>
   </p>
 </div>
