@@ -31,9 +31,9 @@
           <h3> This must be either Rails, Javascript, Python, Swift, or Html. </h3>
         </div>
         <div class="field">
-        <div class="imageform">
+        <div id="imageform">
           <%= f.label :image %><br>
-          <%= f.file_field :image %>
+          <div class="field"> <%= f.file_field :image %> </div>
         <div class="removeimage">
           <% if f.object.image? %>
             <%= image_tag f.object.image.thumb.url %>
@@ -60,6 +60,15 @@
           font-family: 'Roboto Condensed', sans-serif;  
         font-size: 17px;
         padding-top: 10px;
+      }
+
+      #imageform {
+        display: inline-block;
+        
+      }
+
+      div.field {
+          padding-top: 20px;
       }
 
 

@@ -1,6 +1,5 @@
 class Resource < ActiveRecord::Base
 	mount_uploader :image, ImageUploader
-  mount_uploader :upload, ImageUploader
 	validates :title, presence: true, uniqueness: true
   	validates :url, presence: true
   	validates :description, presence: true
