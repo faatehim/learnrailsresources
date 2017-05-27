@@ -10,9 +10,7 @@
 
 <hr>
 
-
-  
-    <% @resources.each do |resource| %>
+      <% Resource.order(:cached_votes_up).reverse.each do |resource| %>
        <div class="index">
          <div class="imageindex">
            <%= image_tag resource.image.thumb.url.to_s %>
@@ -36,6 +34,9 @@
 
    </div>
 
+   <p class="pagination"><%= paginate @resources %></p>
+
+
 
    <style>
 
@@ -52,6 +53,13 @@ div.shortdescription {
      font-family: 'Roboto Condensed', sans-serif;  
      padding-top: 5px;
 }
+
+p.pagination {
+  text-align: center;
+  padding: 10px;
+}
+
+</style>
 
   
 

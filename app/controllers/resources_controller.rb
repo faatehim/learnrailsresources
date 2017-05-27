@@ -1,8 +1,9 @@
 class ResourcesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show, :intro]
+  before_action :correct_user,   only: [:edit, :update, :destroy] 
 
   def index
-  	@resources = Resource.where(:language => params[:language]).all
+  	@resources = Resource.where(:language => params[:language]).page(params[:page]).per(10)
     @resource = Resource.where(:id => params[:id]).first
   end
 
@@ -21,6 +22,7 @@ class ResourcesController < ApplicationController
 
 
   def update
+
     @resource = Resource.where(:id => params[:id]).first
     if @resource.update(resources_params)
       redirect_to root_path
@@ -94,6 +96,15 @@ class ResourcesController < ApplicationController
    def resources_params
  	    params.require(:resource).permit(:title, :url, :description, :image, :tag, :shortdescription, :language)
    end
+
+   def correct_user
+     @resource = Resource.where(:id => params[:id]).first
+     @user= User.find(current_user.id)
+      redirect_to(root_url) unless current_user.id ==@resource.user.id
+   end
+
+
+
 
  end
 
