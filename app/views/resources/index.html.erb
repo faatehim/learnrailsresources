@@ -10,7 +10,7 @@
 
 <hr>
 
-      <% Resource.order(:cached_votes_up).reverse.each do |resource| %>
+      <% @resources.order(:cached_votes_up).reverse.each do |resource| %>
        <div class="index">
          <div class="imageindex">
            <%= image_tag resource.image.thumb.url.to_s %>
