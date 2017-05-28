@@ -61,6 +61,8 @@ end
   gem 'acts_as_votable', '~> 0.10.0'
   gem "mini_magick"
   gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+  gem "figaro"
+  gem "fog"
 
 
 
