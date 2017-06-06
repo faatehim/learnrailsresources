@@ -1,28 +1,8 @@
-== README
+LEARN X LANGUAGE
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+created by Faateh Mohammad
 
-Things you may want to cover:
+Description: community submitted places to learn x programming language. Users can browse resources, upvote them, create them, and comment on them.
 
-* Ruby version
+Languages: Ruby/Ruby on Rails, HTML/CSS, Javascript, and Python.
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
